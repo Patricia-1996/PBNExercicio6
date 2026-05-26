@@ -15,3 +15,16 @@
 #define O_READ    (1 << 2) 
 #define O_WRITE   (1 << 1) 
 #define O_EXEC    (1 << 0)
+
+
+typedef struct {
+    char nome[50];
+    unsigned int permissoes; 
+} ComputadorArquivo;
+
+
+void inicializar_arquivo(ComputadorArquivo *arq, const char *nome);
+void alterar_permissoes(ComputadorArquivo *arq, unsigned int novas_permissoes);
+void exibir_status_chmod(ComputadorArquivo arq);
+
+#endif
