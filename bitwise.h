@@ -25,23 +25,6 @@ typedef struct {
 
 void inicializar_arquivo(ComputadorArquivo *arq, const char *nome);
 void alterar_permissoes(ComputadorArquivo *arq, unsigned int novas_permissoes);
-void exibir_status_chmod(ComputadorArquivo arq) {
-    printf("%-15s ", arq.nome);
-
-    // verifica as permissoes do dono
-    printf("%c", (arq.permissoes & U_READ)  ? 'r' : '-');
-    printf("%c", (arq.permissoes & U_WRITE) ? 'w' : '-');
-    printf("%c", (arq.permissoes & U_EXEC)  ? 'x' : '-');
-
-    // verifica as permissoes do grupo
-    printf("%c", (arq.permissoes & G_READ)  ? 'r' : '-');
-    printf("%c", (arq.permissoes & G_WRITE) ? 'w' : '-');
-    printf("%c", (arq.permissoes & G_EXEC)  ? 'x' : '-');
-
-    // verifica as permissoes de outras pessoas
-    printf("%c", (arq.permissoes & O_READ)  ? 'r' : '-');
-    printf("%c", (arq.permissoes & O_WRITE) ? 'w' : '-');
-    printf("%c\n", (arq.permissoes & O_EXEC) ? 'x' : '-');
-}
+void exibir_status_chmod(ComputadorArquivo arq);
 
 #endif
